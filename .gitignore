@@ -1,0 +1,5 @@
+.DS_Store
+.env
+lango.db
+__pycache__
+venv
