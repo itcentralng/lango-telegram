@@ -14,8 +14,8 @@ bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
-    conn = sqlite3.connect('lango.db')
-    delete_chatlog(conn, message.from_user.id)
+    # conn = sqlite3.connect('lango.db')
+    # delete_chatlog(conn, message.from_user.id)
     bot.reply_to(message, "Welcome to LanGo!")
 
 @bot.message_handler(content_types=["voice"])
