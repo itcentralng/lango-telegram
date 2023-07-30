@@ -16,7 +16,7 @@ bot = telebot.TeleBot(TOKEN)
 def send_welcome(message):
     # conn = sqlite3.connect('lango.db')
     # delete_chatlog(conn, message.from_user.id)
-    bot.reply_to(message, "Welcome to LanGo, your language learning friend! What do you want us to do today?\n\nWe have a few options:\n\n- *Word Game*: I ask you a word in French or English you tell me what it means in the other language.\n\n- *Phrase Game*: I ask you a phrase in French or English you tell me its equivalent in the other language.\n\n- *Hotel Game*: Where I assume the role of a hotel receptionist and you a guest.\n\nYou can respond with voice or chat, but I like voice better 😎 \n\nFor example if you want to play the Hotel Game, you can say 'Let's play a Hotel Game, you be a receptionist and I a guest'", parse_mode='Markdown')
+    bot.reply_to(message, "Welcome to LanGo, your language learning friend! What do you want us to do today?\n\nWe have a few options:\n\n- *Word Game*: I ask you a word in French or English you tell me what it means in the other language.\n\n- *Phrase Game*: I ask you a phrase in French or English you tell me its equivalent in the other language.\n\n- *Hotel Game*: Where I assume the role of a hotel receptionist and you a guest.\n\nYou can respond with voice or chat, but I like voice better 😎 \n\nFor example if you want to play the *Hotel Game*, you can say:\n_'Let's play a Hotel Game, you be a receptionist and I a guest'_", parse_mode='Markdown')
 
 @bot.message_handler(content_types=["voice"])
 def handle_voice(message):    
