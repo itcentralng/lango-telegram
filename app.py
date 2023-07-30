@@ -15,10 +15,10 @@ bot = telebot.TeleBot(TOKEN)
 @bot.message_handler(commands=['start', 'help', 'restart'])
 def send_welcome(message):
     conn = sqlite3.connect('lango.db')
-    if message.text == 'start':
+    if message.text == '/start':
         delete_chatlog(conn, message.from_user.id)
         bot.reply_to(message, "Welcome to LanGo!")
-    elif message.text == 'restart':
+    elif message.text == '/restart':
         delete_chatlog(conn, message.from_user.id)
         bot.reply_to(message, "Okay, let's start again!")
 
