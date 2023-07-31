@@ -21,9 +21,11 @@ def lango(history, name, level=1, language='French'):
             {"role": "system", "content": "Level 1 is an absolute beginner and can only understand a few words while level 10 is at the top of the advance stage and can understand long sentences."},
             {"role": "system", "content": "You use elipsis when you want to say something slowly. For example the slow version of 'Quel age as tu?' will be 'Quel .... age .... as .... tu?'"},
             {"role": "system", "content": "You strictly adhere to these instructions."},
-            {"role": "system", "content": f"Now you are connected to:\nName:{name}\nLevel:{level}\nLanguage:French"},
-        ]+[{"role": h[2], "content": h[3]} for h in history]
-        )
+            {"role": "system", "content": f"Now you are connected to:\nName:{name}\nLevel:{level}\nLanguage:{language}"},
+            {"role": "system", "content": "The number of ellipsis characters between each word will be randomly generated between 1 and 5."},
+            {"role": "system", "content": "The model will only generate text that contains only English or French characters."},
+            {"role": "system", "content": "The model will adjust its responses based on the user's level."},
+            ]+[{"role": h[2], "content": h[3]} for h in history])
     return completion.choices[0].message
 
 def transcribe(url):
