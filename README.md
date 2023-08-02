@@ -34,4 +34,5 @@ This project makes use of the following libraries and APIs:
 
 - pytelegramBotAPI
 - Whisper
+- GPT3.5 Turbo
 - Elevenlabs
